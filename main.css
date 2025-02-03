@@ -10,6 +10,31 @@
     font-weight: 900;
     font-style: normal;
 }
+    
+.subtitle {
+    padding: 0 20px;
+    text-align: center;
+    font-size:x-large;
+    height: fit-content;
+    color: #aaa;
+    text-align: center;
+    font-family: "Lexend", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    background-color: #000;
+    font-style: normal;
+}
+    
+.subtitle:before,
+.subtitle:after {
+    content: '';
+    width: 150px;
+    height: 1px;
+    margin: 0 10px;
+    background: #ccc;
+    display: inline-block;
+    vertical-align: middle;
+}
 
 .wrapper {
     display: grid;
