@@ -12,10 +12,9 @@
     color: #aaa;
     font-weight: 900;
     text-align: center;
-    width: 35rem;
     margin: 0 auto;
     font-size: 200px;
-    font-variation-settings: 'wght' 100, 'wdth' 85;
+    font-variation-settings: 'wght' 100, 'wdth' 100;
     animation: font-animation 4s infinite forwards cubic-bezier(0.48, 0.04, 0.52, 0.96);
 }
 
@@ -25,7 +24,8 @@
     }
 
     100% {
-        font-variation-settings: 'wght' 100, 'wdth' 85;
+        font-variation-settings: 'wght' 100, 'wdth' 100;
+        
     }
 }
 
@@ -46,7 +46,7 @@
 }
 .subtitle {
     margin-top:50px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     padding: 0 20px;
     text-align: center;
     font-size:x-large;
@@ -64,6 +64,32 @@
 .subtitle:after {
     content: '';
     width: 150px;
+    height: 2px;
+    margin: 0 10px;
+    background: #ccc;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sub-subtitle {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 0 20px;
+    font-size: large;
+    height: fit-content;
+    color: #aaa;
+    text-align: center;
+    font-family: "Lexend", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    background-color: #000;
+    font-style: normal;
+}
+
+.sub-subtitle:before,
+.sub-subtitle:after {
+    content: '';
+    width: 20px;
     height: 1px;
     margin: 0 10px;
     background: #ccc;
@@ -71,22 +97,64 @@
     vertical-align: middle;
 }
 
+
 .wrapper {
     display: grid;
     grid-gap: 0px;
     grid-template-columns: repeat(2, 50vw);
-    grid-template-rows: 50vh;
+    grid-template-rows:auto;
     background-color: #000;
     color: #aaa;
 }
 
+.threewaywrapper {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-columns: repeat(3, calc(100vw / 3));
+    grid-template-rows: fit-content;
+    background-color: #000;
+    color: #aaa;
+}
+
+
+.highlight-blue {
+    color: #66f;
+}
+.highlight-red {
+    color: #f66;
+}
+.highlight-white {
+    color: #fff;
+}
+
+.highlight-orange {
+    color: #faa;
+}
+
+.highlight-skyblue {
+    color: skyblue;
+}
+
+.highlight-darkgrey {
+    color: #777;
+}
+
+.highlight-irongrey {
+    color: #555;
+}
+
 .content {
-    height: 50vh;
+    height: fit-content;
     padding: 10px;
     font-family: "Lexend", serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+
+    .bold {
+        font-weight: 900;
+        color: #bcb;
+    }
 }
 
 
@@ -160,15 +228,4 @@
     background-size: contain;
     background-position: 50% 50%;
     box-shadow: 0 0 8px 8px #000 inset;
-}
-
-.footer {
-    position: absolute;
-    left: 0;
-    top: 390vh;
-    height: fit-content;
-    width: 100%;
-    background-color: #111;
-    color: white;
-    text-align: center;
 }
