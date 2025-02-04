@@ -1,16 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
+
+
+
+
 .title {
-    width: 100%;
-    margin-bottom: 50px;
-    height: fit-content;
-    color: #aaa;
-    text-align: center;
     font-family: "Lexend", serif;
     font-optical-sizing: auto;
+    line-height: 1;
+    font-size: 8rem;
+    color: #aaa;
     font-weight: 900;
-    font-style: normal;
-    font-size: xx-large;
+    text-align: center;
+    width: 35rem;
+    margin: 0 auto;
+    font-size: 200px;
+    font-variation-settings: 'wght' 100, 'wdth' 85;
+    animation: font-animation 4s infinite forwards cubic-bezier(0.48, 0.04, 0.52, 0.96);
+}
+
+@keyframes font-animation {
+    60% {
+        font-variation-settings: 'wght' 900, 'wdth' 100;
+    }
+
+    100% {
+        font-variation-settings: 'wght' 100, 'wdth' 85;
+    }
 }
 
 .next {
