@@ -29,21 +29,75 @@
     }
 }
 
+
+
+
+    
+
+
 .next {
-    width: 100vw;
-    height: 20vh;
+    --s: 1em;
+    /* control the wave*/
+
+    padding: .4em .5em;
     text-align: center;
     font-family: "Lexend", serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
-    background-color: #fff;
-        --mask:
-            radial-gradient(3.05vw at 50% 4.3vw, #000 99%, #0000 101%) calc(50% - 4vw) 0/8vw 100%,
-            radial-gradient(3.05vw at 50% -2.3vw, #0000 99%, #000 101%) 50% 2vw/8vw 100% repeat-x;
-        -webkit-mask: var(--mask);
-        mask: var(--mask);
+    background-color: #7a7;
+    color: #fff;
+    --_s: calc(var(--s)*4) 100% repeat-x;
+    --_r: calc(1.345*var(--s)) at left 50%;
+    --_g1: #000 99%, #0000 101%;
+    --_g2: #0000 99%, #000 101%;
+    --mask:
+        radial-gradient(var(--_r) top calc(var(--s)* 1.9), var(--_g1)) calc(50% - 2*var(--s) - var(--_i, 0px)) 0/var(--_s),
+        radial-gradient(var(--_r) top calc(var(--s)*-0.9), var(--_g2)) calc(50% - var(--_i, 0px)) var(--s)/var(--_s);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    cursor: pointer;
+    animation: test 0.35s infinite forwards ease-in-out;
 }
+
+.next:hover {
+    
+    transition: .35s;
+}
+
+.next:active {
+    background-image: linear-gradient(#0004 0 0);
+}
+@keyframes test {
+    0% {
+        --_i:calc(var(--s))
+    }
+    12.5% {
+        --_i: calc(1.5*var(--s))
+    }
+    25% {
+        --_i: calc(2*var(--s))
+    }
+    37.5% {
+        --_i: calc(2.5*var(--s))
+    }
+    50% {
+        --_i: calc(3*var(--s))
+    }
+    62.5% {
+        --_i: calc(3.5*var(--s))
+    }
+    75% {
+        --_i: calc(4*var(--s))
+    }
+    87.5% {
+        --_i: calc(4.5*var(--s))
+    }
+    100% {
+        --_i: calc(5*var(--s));
+    }
+}
+
 .subtitle {
     margin-top:50px;
     margin-bottom: 20px;
@@ -201,7 +255,7 @@
     background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Black_dwarf_star-bpk.jpg/640px-Black_dwarf_star-bpk.jpg");
     background-repeat: no-repeat;
     background-size: contain;
-    filter:brightness(200%);
+    filter:brightness(500%);
     background-position: 50% 50%;
     box-shadow: 0 0 128px 64px #000 inset;
 }
@@ -228,4 +282,21 @@
     background-size: contain;
     background-position: 50% 50%;
     box-shadow: 0 0 8px 8px #000 inset;
+}
+
+
+.strangestarsblurb {
+    height: fit-content;
+    padding: 10px;
+    font-family: "Lexend", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #aaa;
+    text-align:center;
+    
+    .bold {
+        font-weight: 900;
+        color: #bcb;
+    }
 }
